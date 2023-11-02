@@ -7,10 +7,20 @@ terraform {
   }
 }
 
+data "azurerm_servicebus_namespace" "sb_namespace" {
+  name                = var.namespace_name
+  resource_group_name = var.resource_group_name
+}
+
+data "azurerm_servicebus_topic" "sb_topic" {
+  name         = var.topic_name
+  namespace_id = data.azurerm_servicebus_namespace.sb_namespace.id
+}
+
 resource "azurerm_servicebus_subscription" "subscription" {
   name                = var.name
 
-  topic_id = var.topic_id
+  topic_id = data.azurerm_servicebus_topic.sb_topic.id
   
   max_delivery_count                        = var.max_delivery_count
   dead_lettering_on_filter_evaluation_error = var.dead_lettering_on_filter_evaluation_error

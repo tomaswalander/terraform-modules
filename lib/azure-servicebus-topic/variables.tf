@@ -1,4 +1,4 @@
-variable "servicebus_namespace_name" {
+variable "namespace_name" {
   type        = string
   description = "The name of the Azure servicebus namespace"
 }

@@ -1,5 +1,5 @@
 data "azurerm_servicebus_namespace" "sb_namespace" {
-  name                = var.servicebus_namespace_name
+  name                = var.namespace_name
   resource_group_name = var.resource_group_name
 }
 

@@ -1,6 +1,16 @@
-variable "topic_id" {
+variable "namespace_name" {
   type        = string
-  description = "The Id of the Azure Servicebus Topic to subscribe to."
+  description = "The name of the Azure servicebus namespace"
+}
+
+variable "resource_group_name" {
+  type        = string
+  description = "The name of the Azure resource group containing the Azure servicebus namespace"
+}
+
+variable "topic_name" {
+  type        = string
+  description = "The name of the Azure servicebus topic to create"
 }
 
 variable "max_delivery_count" {
