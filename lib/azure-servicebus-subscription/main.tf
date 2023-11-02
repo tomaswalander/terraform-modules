@@ -18,7 +18,7 @@ data "azurerm_servicebus_topic" "sb_topic" {
 }
 
 resource "azurerm_servicebus_subscription" "subscription" {
-  name                = var.name
+  name = var.subscription_name
 
   topic_id = data.azurerm_servicebus_topic.sb_topic.id
   

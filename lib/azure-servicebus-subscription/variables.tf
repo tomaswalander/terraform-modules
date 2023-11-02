@@ -24,12 +24,12 @@ variable "dead_lettering_on_filter_evaluation_error" {
   default     = true
 }
 
-variable "name" {
+variable "subscription_name" {
   type        = string
   description = "The name of the subscription to create. Must be unique within one Azure Servicebus topic."
   
   validation {
-    condition     = substr(var.name, 0, 4) == "sbs-"
+    condition     = substr(var.subscription_name, 0, 4) == "sbs-"
     error_message = "The subscription name must start with \"sbs-\"."
   }
 }
