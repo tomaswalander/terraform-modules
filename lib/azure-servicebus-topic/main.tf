@@ -5,7 +5,7 @@ data "azurerm_servicebus_namespace" "sb_namespace" {
 
 resource "azurerm_servicebus_topic" "sb_topic" {  
   name                = var.topic_name
-  namespace_id        = azurerm_servicebus_namespace.sb_namespace.id
+  namespace_id        = data.azurerm_servicebus_namespace.sb_namespace.id
 
   # auto_delete_on_idle                   = TBD
   default_message_ttl                     = var.default_message_ttl
