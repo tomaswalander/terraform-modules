@@ -22,7 +22,7 @@ variable "sku" {
 variable "capacity" {
   type        = number
   description = "The capacity of the Service Bus namespace"
-  default     = 1
+  default     = 0
 }
 
 variable "tags" {

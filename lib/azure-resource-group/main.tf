@@ -14,9 +14,7 @@ resource "azurerm_resource_group" "this" {
   tags = merge(
     var.tags,
     {
-      created_by        = "terraform"
-      tf_azurerm_version   = "3.75.0"
-      owner             = var.owner
+      owner = var.owner
     }
   )
 }
